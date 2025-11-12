@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { ChatInterface } from "@/components/chat-interface"
+import { PrivacyTab } from "@/components/privacy-tab"
 
-export default function Home() {
+export default function PrivacyPage() {
   return (
     <div className="flex h-screen bg-background">
       {/* Main Content */}
@@ -19,13 +19,13 @@ export default function Home() {
           <div className="flex gap-2 bg-secondary p-1 rounded-sm">
             <Link
               href="/"
-              className={`px-6 py-2 rounded-sm transition-all font-semibold text-sm bg-primary text-primary-foreground shadow-md`}
+              className={`px-6 py-2 rounded-sm transition-all font-semibold text-sm text-secondary-foreground hover:bg-white/50`}
             >
               Chat
             </Link>
             <Link
               href="/privacy"
-              className={`px-6 py-2 rounded-sm transition-all font-semibold text-sm text-secondary-foreground hover:bg-white/50`}
+              className={`px-6 py-2 rounded-sm transition-all font-semibold text-sm bg-primary text-primary-foreground shadow-md`}
             >
               Privacy
             </Link>
@@ -34,9 +34,10 @@ export default function Home() {
 
         {/* Content */}
         <div className="flex-1 overflow-hidden">
-          <ChatInterface />
+          <PrivacyTab />
         </div>
       </div>
     </div>
   )
 }
+
