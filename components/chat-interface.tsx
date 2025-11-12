@@ -52,7 +52,7 @@ export function ChatInterface() {
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: data.message || "Sorry, I encountered an error.",
+        content: data?.result?.response || "Sorry, I encountered an error.",
         timestamp: new Date(),
       };
 
