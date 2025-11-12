@@ -1,0 +1,194 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* USPS Style Guide - Primary Palette */
+  /* USPS Digital Blue #333366 - Principle Color */
+  --primary: #333366;
+  --primary-foreground: #FFFFFF; /* White */
+  
+  /* Background - White #FFFFFF */
+  --background: #FFFFFF;
+  --foreground: #000000; /* Text Black */
+  
+  /* Card backgrounds */
+  --card: #FFFFFF; /* White */
+  --card-foreground: #000000; /* Text Black */
+  --popover: #FFFFFF; /* White */
+  --popover-foreground: #000000; /* Text Black */
+  
+  /* USPS Style Guide - Secondary Palette */
+  /* Light Background Gray #F7F7F7 - Prominent Background Gray */
+  --secondary: #F7F7F7;
+  --secondary-foreground: #000000; /* Text Black */
+  
+  /* Background Hover Gray #EDEDED */
+  --muted: #EDEDED;
+  --muted-foreground: #595959; /* Text Gray */
+  
+  /* USPS Digital Accent Blue #3573B1 - Graphics accent and alternative text link color */
+  --accent: #3573B1;
+  --accent-foreground: #FFFFFF; /* White */
+  
+  /* USPS Digital Red #E71921 - Error/Alert Messaging */
+  --destructive: #E71921;
+  --destructive-foreground: #FFFFFF; /* White */
+  
+  /* Borders and inputs */
+  --border: #D8D8D8; /* Dark Background Gray */
+  --input: #FFFFFF; /* White */
+  --ring: #333366; /* USPS Digital Blue */
+  
+  /* Chart colors using USPS palette */
+  --chart-1: #333366; /* USPS Digital Blue */
+  --chart-2: #3573B1; /* USPS Digital Accent Blue */
+  --chart-3: #218748; /* USPS Digital Green */
+  --chart-4: #E71921; /* USPS Digital Red */
+  --chart-5: #595959; /* Text Gray */
+  
+  --radius: 0.375rem;
+  
+  /* Sidebar colors */
+  --sidebar: #F7F7F7; /* Light Background Gray */
+  --sidebar-foreground: #000000; /* Text Black */
+  --sidebar-primary: #333366; /* USPS Digital Blue */
+  --sidebar-primary-foreground: #FFFFFF; /* White */
+  --sidebar-accent: #EDEDED; /* Background Hover Gray */
+  --sidebar-accent-foreground: #000000; /* Text Black */
+  --sidebar-border: #D8D8D8; /* Dark Background Gray */
+  --sidebar-ring: #333366; /* USPS Digital Blue */
+}
+
+.dark {
+  /* USPS Style Guide - Dark Mode */
+  /* Dark background - using darker gray for contrast */
+  --background: #1a1a1a;
+  --foreground: #FFFFFF; /* White text */
+  
+  /* Card backgrounds */
+  --card: #2a2a2a;
+  --card-foreground: #FFFFFF; /* White */
+  --popover: #2a2a2a;
+  --popover-foreground: #FFFFFF; /* White */
+  
+  /* USPS Digital Accent Blue #3573B1 for better contrast in dark mode */
+  --primary: #3573B1;
+  --primary-foreground: #FFFFFF; /* White */
+  
+  /* Secondary using darker grays */
+  --secondary: #3a3a3a;
+  --secondary-foreground: #FFFFFF; /* White */
+  
+  /* Muted using Text Gray #595959 */
+  --muted: #595959;
+  --muted-foreground: #CCCCCC;
+  
+  /* USPS Digital Accent Blue #3573B1 */
+  --accent: #3573B1;
+  --accent-foreground: #FFFFFF; /* White */
+  
+  /* USPS Digital Red #E71921 - Error/Alert */
+  --destructive: #E71921;
+  --destructive-foreground: #FFFFFF; /* White */
+  
+  /* Borders and inputs */
+  --border: #595959; /* Text Gray */
+  --input: #2a2a2a;
+  --ring: #3573B1; /* USPS Digital Accent Blue */
+  
+  /* Chart colors using USPS palette */
+  --chart-1: #3573B1; /* USPS Digital Accent Blue */
+  --chart-2: #218748; /* USPS Digital Green */
+  --chart-3: #E71921; /* USPS Digital Red */
+  --chart-4: #333366; /* USPS Digital Blue */
+  --chart-5: #999999; /* Light gray */
+  
+  /* Sidebar colors */
+  --sidebar: #252525;
+  --sidebar-foreground: #FFFFFF; /* White */
+  --sidebar-primary: #3573B1; /* USPS Digital Accent Blue */
+  --sidebar-primary-foreground: #FFFFFF; /* White */
+  --sidebar-accent: #3a3a3a;
+  --sidebar-accent-foreground: #FFFFFF; /* White */
+  --sidebar-border: #595959; /* Text Gray */
+  --sidebar-ring: #3573B1; /* USPS Digital Accent Blue */
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 2px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Smooth animations */
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklch, var(--muted) 40%, transparent);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in oklch, var(--muted) 60%, transparent);
+  }
+}
